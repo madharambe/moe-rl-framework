@@ -1,0 +1,32 @@
+# Normalise line endings: always LF in the repository, on every platform.
+* text=auto eol=lf
+
+# Explicit text types
+*.py     text eol=lf
+*.sh     text eol=lf
+*.md     text eol=lf
+*.txt    text eol=lf
+*.json   text eol=lf
+*.yaml   text eol=lf
+*.yml    text eol=lf
+*.xml    text eol=lf
+*.urdf   text eol=lf
+*.xacro  text eol=lf
+*.launch text eol=lf
+*.cfg    text eol=lf
+*.toml   text eol=lf
+
+# Binary — never touch
+*.pt     binary
+*.pth    binary
+*.onnx   binary
+*.engine binary
+*.zip    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.stl    binary
+*.obj    binary
+*.dae    binary
+*.step   binary

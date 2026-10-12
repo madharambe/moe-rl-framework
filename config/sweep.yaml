@@ -1,0 +1,48 @@
+# Hyperparameter sweep config for RSI algorithms
+# Usage: python -c "import yaml; yaml.dump(yaml.safe_load(open('config/sweep.yaml')), sys.stdout)"
+
+program: src/train.py
+method: grid
+
+parameters:
+  algo:
+    values: ["ppo", "sac", "td3", "dqn"]
+
+  lr:
+    values: [1e-4, 3e-4, 1e-3]
+
+  gamma:
+    values: [0.95, 0.99]
+
+  batch_size:
+    values: [64, 128, 256]
+
+ppo:
+  parameters:
+    ppo_epochs:
+      values: [5, 10, 20]
+    ppo_clip:
+      values: [0.1, 0.2, 0.3]
+
+sac:
+  parameters:
+    sac_batch_size:
+      values: [128, 256, 512]
+    sac_update_interval:
+      values: [1, 2, 4]
+
+td3:
+  parameters:
+    td3_batch_size:
+      values: [128, 256]
+    td3_update_interval:
+      values: [2, 4]
+
+dqn:
+  parameters:
+    dqn_batch_size:
+      values: [32, 64, 128]
+    dqn_update_interval:
+      values: [2, 4, 8]
+    dqn_actions:
+      values: [4, 8, 16]

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Training artefacts - never commit
+runs/
+out/
+tmp/
+logs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Data & corpora - never commit (large, and may contain third-party code)
+data/
+corpus/
+hf_cache/
+pip_cache/
+backups/
+
+# Secrets
+.env
+*.env
+secrets.json
+credentials*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

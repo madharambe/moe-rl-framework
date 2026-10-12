@@ -1,0 +1,14 @@
+RSI - Reinforcement Learning System for Intelligent Robotics
+Copyright (c) 2026 Nicholas Jayaputra
+
+This product includes software developed by third parties. Dependencies are
+declared in requirements.txt and are not vendored in this repository.
+
+Architectural ideas and training recipes were informed by the published work
+listed in the README, including FlashSAC (Kim et al., ICLR 2026), AE-PPO
+(MDPI 2026), LibMoE (arXiv 2411.00918), NanoChat-MoE (Duan et al., 2026),
+Tiny-MoE (Ebied, 2026), GQA (Ainslie et al., 2023), CleanRL (Huang et al.),
+ERL (Shi et al., 2026) and LSE (Chen et al., 2026).
+
+The training corpora, model checkpoints and cached artefacts used during
+development are NOT included in this repository.

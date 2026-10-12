@@ -1,0 +1,13 @@
+# RSI - runtime dependencies
+#
+# PyTorch is NOT pinned to a build here on purpose: install the wheel that matches
+# your CUDA driver first, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+# and then install this file. Everything else is pure-Python or has manylinux wheels.
+torch>=2.4
+numpy>=1.26
+gymnasium>=0.29
+pybullet>=3.2.6
+tokenizers>=0.19
+tqdm>=4.66
+requests>=2.31
