@@ -44,8 +44,10 @@ and is small enough to train and serve on a 6 GB laptop GPU.
   general assistant behaviour.
 - It was trained on a code/instruction corpus collected for this project; it has **no
   safety alignment** and should not be exposed to untrusted users without one.
-- The checkpoint published here corresponds to a specific training run; see the
-  repository's `AGENTS-notes.md` for the bug knowledge base and known dead ends.
+- **No checkpoints are published in this release.** The architecture and the training
+  code are complete and runnable; the weights stay local because they are not yet good
+  enough to be worth other people's disk space. Everything on this card describes what
+  the code builds and how it is trained, not a downloadable artefact.
 
 ## How to use
 ```python
@@ -71,6 +73,8 @@ Architecture choices were informed by the published work listed in the repositor
 README (LibMoE, Tiny-MoE, NanoChat-MoE, GQA), all verified against primary sources.
 
 ## Status
-Training code and architecture: **complete and runnable**. The published checkpoint is
-produced by `src/train_moe.py`; if this card is read before that file is attached, the
-weights are still being trained — the repository is the source of truth.
+Training code and architecture: **complete and runnable**. Checkpoints: **not published** —
+the models trained so far are an honest work in progress and are being kept local until
+they are worth releasing. If you want one, run the trainers: a `mini` (~50M) pretraining
+pass fits in a few GB of VRAM and about forty minutes on a 6 GB laptop GPU, and
+`src/train_ambatron.py` is the entry point. The repository is the source of truth.

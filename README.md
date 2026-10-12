@@ -5,10 +5,12 @@
 > refines its own solutions — designed to train and run on a **6 GB laptop GPU**.
 
 **Scope of this release.** The framework, the model family, the training code, the
-self-refinement loop and the evaluation suites are here and runnable. The **data-
-acquisition and corpus-curation pipeline** is deliberately not included, and neither are
-trained checkpoints for every configuration: the pipeline is the part that took the
-experience to build, and it is not needed to use or evaluate anything in this repository.
+self-refinement loop and the evaluation suites are here and runnable. Two things are
+deliberately **not** here. First, the **data-acquisition and corpus-curation pipeline** -
+the part that took the experience to build, and it is not needed to use or evaluate
+anything in this repository. Second, **no model checkpoints**: the models trained so far
+are an honest work in progress and are being kept local rather than published as if they
+were finished. Everything you need to train your own is in `src/`.
 Where a result in `NOTICE` or `MODEL_CARD.md` was produced with those tools, it says so
 rather than implying the numbers are reproducible from this tree alone.
 
@@ -16,7 +18,7 @@ rather than implying the numbers are reproducible from this tree alone.
 [![ci](https://github.com/madharambe/moe-rl-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/madharambe/moe-rl-framework/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-orange.svg)](https://pytorch.org/)
-[![Weights: Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Hugging%20Face-yellow)](https://huggingface.co/YOUR_HF_USERNAME)
+![Weights: not published](https://img.shields.io/badge/Weights-not%20published%20yet-lightgrey)
 
 **What is in here** — two things that share one self-refinement loop:
 
