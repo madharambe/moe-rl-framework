@@ -13,6 +13,7 @@ Where a result in `NOTICE` or `MODEL_CARD.md` was produced with those tools, it 
 rather than implying the numbers are reproducible from this tree alone.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![ci](https://github.com/madharambe/moe-rl-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/madharambe/moe-rl-framework/actions/workflows/ci.yml)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-orange.svg)](https://pytorch.org/)
 [![Weights: Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Weights-Hugging%20Face-yellow)](https://huggingface.co/YOUR_HF_USERNAME)
