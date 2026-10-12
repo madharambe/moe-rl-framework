@@ -35,7 +35,10 @@ jobs:
           # MEASURED: a loose '/home/<x>/' pattern matched a legitimate EXAMPLE path in
           # scale_tool_sft.py ('/home/user/docs/report.pdf') and would have failed this job
           # on its first run. The guard names the real identity instead of a generic shape.
-          if git grep -InE '(nicholas-jayaputra|/media/nicholas|ssh-ed25519|ghp_[A-Za-z0-9]{20,}|hf_[A-Za-z0-9]{20,}|BEGIN [A-Z ]*PRIVATE KEY)' -- . ; then
+          # The exclusion is required, not cosmetic: without it git grep matches THIS
+          # FILE, whose pattern text contains the very strings being searched for.
+          if git grep -InE '(nicholas-jayaputra|/media/nicholas|ssh-ed25519|ghp_[A-Za-z0-9]{20,}|hf_[A-Za-z0-9]{20,}|BEGIN [A-Z ]*PRIVATE KEY)' \
+               -- . ':(exclude).github/workflows/ci.yml' ; then
             echo '::error::a personal path or credential-shaped string is tracked'
             exit 1
           fi
