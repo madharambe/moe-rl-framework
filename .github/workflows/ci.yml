@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # No third-party dependencies on purpose: this job must stay green on a cold
+      # runner. It verifies every module parses, which is the minimum a reader should
+      # be able to assume about a tree they are about to clone.
+      - name: Every Python file parses
+        run: |
+          python - <<'PY'
+          import ast, pathlib, sys
+          bad = []
+          for p in pathlib.Path('src').rglob('*.py'):
+              try:
+                  ast.parse(p.read_text(encoding='utf-8', errors='replace'))
+              except SyntaxError as e:
+                  bad.append(f'{p}: {e}')
+          print(f'checked {len(list(pathlib.Path("src").rglob("*.py")))} files')
+          if bad:
+              print('\n'.join(bad)); sys.exit(1)
+          PY
+      - name: No secrets or personal paths are committed
+        run: |
+          # MEASURED: a loose '/home/<x>/' pattern matched a legitimate EXAMPLE path in
+          # scale_tool_sft.py ('/home/user/docs/report.pdf') and would have failed this job
+          # on its first run. The guard names the real identity instead of a generic shape.
+          if git grep -InE '(nicholas-jayaputra|/media/nicholas|ssh-ed25519|ghp_[A-Za-z0-9]{20,}|hf_[A-Za-z0-9]{20,}|BEGIN [A-Z ]*PRIVATE KEY)' -- . ; then
+            echo '::error::a personal path or credential-shaped string is tracked'
+            exit 1
+          fi
+          echo 'clean'

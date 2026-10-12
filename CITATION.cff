@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Jayaputra
+    given-names: Nicholas
+title: >-
+  moe-rl-framework: a multi-algorithm reinforcement-learning framework and a
+  from-scratch Mixture-of-Experts language model family built for 6 GB GPUs
+version: 0.1.0
+date-released: 2026-10-13
+license: Apache-2.0
+url: https://github.com/madharambe/moe-rl-framework
+repository-code: https://github.com/madharambe/moe-rl-framework
+keywords:
+  - reinforcement-learning
+  - mixture-of-experts
+  - language-model
+  - small-language-models
+  - low-vram-training
+  - robotics
+abstract: >-
+  A reinforcement-learning framework (DQN, PPO, SAC, TD3, BC, DAgger) for robotics,
+  paired with a from-scratch MoE language-model family spanning roughly 50M to 587M
+  parameters. Designed to train and run on a single 6 GB laptop GPU. The
+  data-acquisition and corpus-curation pipeline is intentionally not part of this
+  release; the framework, the model, the training code and the evaluation suites are.
