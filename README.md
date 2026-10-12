@@ -4,6 +4,14 @@
 > paired with a from-scratch **Mixture-of-Experts language model** that generates and
 > refines its own solutions — designed to train and run on a **6 GB laptop GPU**.
 
+**Scope of this release.** The framework, the model family, the training code, the
+self-refinement loop and the evaluation suites are here and runnable. The **data-
+acquisition and corpus-curation pipeline** is deliberately not included, and neither are
+trained checkpoints for every configuration: the pipeline is the part that took the
+experience to build, and it is not needed to use or evaluate anything in this repository.
+Where a result in `NOTICE` or `MODEL_CARD.md` was produced with those tools, it says so
+rather than implying the numbers are reproducible from this tree alone.
+
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-orange.svg)](https://pytorch.org/)
